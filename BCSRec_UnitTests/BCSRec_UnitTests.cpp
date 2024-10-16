@@ -33,7 +33,7 @@ namespace BCSRecUnitTests
 			int length = 2;
 			int width = 3;
 			int expected = 6;	// area should be the product of length & width sides.
-			int actual = getPerimeter(&length, &width);
+			int actual = getArea(&length, &width);
 			Assert::AreEqual(expected, actual);
 		}
 
@@ -78,7 +78,7 @@ namespace BCSRecUnitTests
 			int width = 1;	// minimum input that is acceptable per the req.
 			int lowInput = 0;	// 0 should be out of bounds per the requirements
 			int expected = 1;	// width should remain unchanged as input is too low
-			setLength(lowInput, &width);
+			setWidth(lowInput, &width);
 			Assert::AreEqual(expected, width);
 		}
 		TEST_METHOD(setWidth_upperOutOfBounds)
@@ -86,7 +86,7 @@ namespace BCSRecUnitTests
 			int width = 99;	// max input that is acceptable per the req.
 			int highInput = 100;	// should be out of bounds per the req.
 			int expected = 99;	// width should remain unchanged as input is too high.
-			setLength(highInput, &width);
+			setWidth(highInput, &width);
 			Assert::AreEqual(expected, width);
 		}
 		TEST_METHOD(setWidth_charInput)
@@ -94,7 +94,7 @@ namespace BCSRecUnitTests
 			int width = 99;
 			char charInput = 's';
 			int expected = 99;	// function should not take char input, thus no change.
-			setLength(charInput, &width);
+			setWidth(charInput, &width);
 			Assert::AreEqual(expected, width);
 		}
 
